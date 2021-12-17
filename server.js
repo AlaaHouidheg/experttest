@@ -16,6 +16,7 @@ if (process.env.NODE_ENV === "production") {
   express.use(express.static("/client/build"));
 }
 
-app.listen(process.env.PORT, (err) =>
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, (err) =>
   err ? console.log(err) : console.log("server is running")
 );
